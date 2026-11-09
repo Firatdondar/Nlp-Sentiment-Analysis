@@ -1,29 +1,29 @@
-# 🧠 Türkçe Doğal Dil İşleme (NLP) ve Duygu Analizi
+# 🧠 NLP Sentiment Analysis & Recommendation Engine
 
-Ürün yorumları üzerinde **Türkçe kök bulma (Stemming)**, **N-Gram vektörleştirme (`CountVectorizer`)** ve **Multinomial Naive Bayes** sınıflandırması kullanarak duygu analizi (Sentiment Analysis) ve hibrit ürün önerisi gerçekleştiren Python projesi.
+An end-to-end **Natural Language Processing (NLP)** pipeline in Python that performs **text preprocessing (tokenization, stop-word removal, Porter stemming)**, **unigram/bigram vectorization (`CountVectorizer`)**, and **Multinomial Naive Bayes (`MultinomialNB`)** sentiment classification on e-commerce product reviews, paired with a content-based fallback recommendation trigger.
 
-## ✨ Özellikler
+## ✨ Key Features
 
-- **Türkçe Ön İşleme:** `NLTK` ve `TurkishStemmer` ile noktalama işaretlerinin temizlenmesi, Türkçe etkisiz kelimelerin (*stop-words*) filtrelenmesi ve kelime köklerinin çıkarılması.
-- **N-Gram Vektörleştirme:** `CountVectorizer(ngram_range=(1, 2))` ile tekli ve ikili kelime gruplarının çıkarılması.
-- **Duygu Sınıflandırması:** `MultinomialNB` modeli ile yorumların Olumlu/Olumsuz olarak sınıflandırılması ve doğruluk/sınıflandırma raporunun üretilmesi.
-- **Makro & Mikro Analiz Paneli:** Genel memnuniyet oranının hesaplanması, %50 kritik eşik altında alternatif ürün önerisi (İçerik Tabanlı Filtreleme) ve en iyi/en kötü 5 yorumun güven skorlarıyla sıralanması.
-- **İnteraktif Test Modu:** Kullanıcının terminalden girdiği yeni yorumların anlık olarak analiz edilmesi.
+- **NLP Text Preprocessing:** Tokenizes raw review text, filters English stop-words, and extracts word stems using `NLTK` (`PorterStemmer`).
+- **Unigram & Bigram Feature Extraction:** Captures both single words and two-word phrases via `CountVectorizer(ngram_range=(1, 2))`.
+- **Probabilistic Sentiment Classification:** Trains a `MultinomialNB` classifier and outputs accuracy, precision, recall, and F1-score metrics.
+- **Macro & Micro Sentiment Dashboard:** Computes overall product satisfaction ratios, ranks the top 5 most positive and most negative reviews by AI confidence score, and triggers an alternative product recommendation if satisfaction drops below the 50% threshold.
+- **Interactive CLI Testing:** Allows testing custom product reviews in real time from the terminal.
 
-## 🛠️ Kurulum ve Çalıştırma
+## 🛠️ Installation & Usage
 
-1. **Depoyu klonlayın:**
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Firatdondar/dogal-dil-isleme.git
-   cd dogal-dil-isleme
+   git clone https://github.com/Firatdondar/Nlp-Sentiment-Analysis.git
+   cd Nlp-Sentiment-Analysis
    ```
 
-2. **Gerekli kütüphaneleri yükleyin:**
+2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Analizi başlatın:**
+3. **Run the sentiment analyzer:**
    ```bash
-   python analiz.py
+   python main.py
    ```
