@@ -14,8 +14,8 @@
 
 1. **Depoyu klonlayın:**
    ```bash
-   git clone https://github.com/Firatdondar/do-al-dil-i-leme.git
-   cd do-al-dil-i-leme
+   git clone https://github.com/Firatdondar/dogal-dil-isleme.git
+   cd dogal-dil-isleme
    ```
 
 2. **Gerekli kütüphaneleri yükleyin:**
