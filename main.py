@@ -1,3 +1,4 @@
+from pathlib import Path
 import sys
 import numpy as np
 import pandas as pd
@@ -32,7 +33,8 @@ def main():
     # STEP 1: LOAD CORPUS DATASET
     # =====================================================================
     try:
-        df = pd.read_csv('reviews.txt', sep='|', names=['review', 'sentiment'])
+        dataset_path = Path(__file__).resolve().parent / 'reviews.txt'
+        df = pd.read_csv(dataset_path, sep='|', names=['review', 'sentiment'])
     except FileNotFoundError:
         print("\nERROR: 'reviews.txt' not found! Make sure it is in the same directory as main.py.\n")
         sys.exit(1)
